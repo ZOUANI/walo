@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    stages {
+        stage('colne') {
+            steps {
+                sh 'cd /home/ana/'
+                sh 'rm -rf myprojects'
+
+                sh 'mkdir -p myprojects'
+                sh 'chmod -R 777 myprojects'
+
+                sh 'git clone https://github.com/ZOUANI/walo.git /home/ana/myprojects/walo'
+            }
+        }
+        stage('build') {
+                    steps {
+                        sh 'cd /home/ana/myprojects/walo'
+                        sh 'mvn package'
+                    }
+                }
+
+        stage('run') {
+                    steps {
+                      sh 'cd /home/ana/myprojects/walo/target'
+                      sh 'java -jar mavenproject2*.jar'
+                    }
+                }
+            }
+    
+}
