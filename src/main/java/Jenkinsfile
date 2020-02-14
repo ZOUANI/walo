@@ -4,11 +4,12 @@ pipeline {
         stage('colne') {
             steps {
                 sh 'cd /home/ana/'
-                sh 'rm -rf myprojects'
+                sh 'mkdir -p /home/ana/myprojects'
+                sh 'rm -rf myprojects/*'
 
               
 
-                sh 'git clone https://github.com/ZOUANI/walo.git /home/ana/myprojects/walo'
+                sh 'git clone https://github.com/ZOUANI/walo.git /home/ana/myprojects/'
             }
         }
         stage('build') {
