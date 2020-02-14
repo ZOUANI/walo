@@ -3,26 +3,23 @@ pipeline {
     stages {
         stage('colne') {
             steps {
-                sh 'cd /home/ana/'
-                sh 'mkdir -p /home/ana/myprojects'
-                sh 'rm -rf myprojects/*'
-                sh 'cd /home/ana/myprojects'
-              
+                sh 'mkdir -p myprojects'
+                sh 'rm -rf myprojects/*'            
 
                 sh 'git clone https://github.com/ZOUANI/walo.git'
             }
         }
         stage('build') {
                     steps {
-                        sh 'cd /home/ana/myprojects/walo'
+                        sh 'cd myprojects/walo'
                         sh 'mvn package'
                     }
                 }
 
         stage('run') {
                     steps {
-                      sh 'cd /home/ana/myprojects/walo/target'
-                      sh 'java -jar mavenproject2*.jar'
+                      sh 'cd myprojects/walo'
+                      sh 'java -jar walo*.jar'
                     }
                 }
             }
