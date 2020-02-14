@@ -3,10 +3,7 @@ pipeline {
     stages {
         stage('colne') {
             steps {
-                sh 'mkdir -p myprojects'
-                sh 'rm -rf myprojects/*'            
-                sh 'cd myprojects'
-                sh 'git clone https://github.com/ZOUANI/walo.git'
+                sh 'git pull https://github.com/ZOUANI/walo.git'
             }
         }
         stage('build') {
