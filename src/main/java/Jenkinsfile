@@ -3,6 +3,8 @@ pipeline {
     stages {
         stage('colne') {
             steps {
+                 sh 'pwd'
+
                 sh 'git pull https://github.com/ZOUANI/walo.git'
             }
         }
