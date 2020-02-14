@@ -15,6 +15,7 @@ pipeline {
 
         stage('run') {
                     steps {
+                      sh 'ls -l'
                       sh 'cd target'
                       sh 'ls -l'
                     }
