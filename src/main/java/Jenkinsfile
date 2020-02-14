@@ -16,7 +16,7 @@ pipeline {
         stage('run') {
                     steps {
                       sh 'cd target'
-                      sh 'java -jar walo*.jar'
+                      sh 'ls -l'
                     }
                 }
             }
