@@ -8,14 +8,14 @@ pipeline {
         }
         stage('build') {
                     steps {
-                        sh 'cd myprojects/walo'
+                        sh 'cd walo'
                         sh 'mvn package'
                     }
                 }
 
         stage('run') {
                     steps {
-                      sh 'cd myprojects/walo'
+                      sh 'cd walo'
                       sh 'java -jar walo*.jar'
                     }
                 }
