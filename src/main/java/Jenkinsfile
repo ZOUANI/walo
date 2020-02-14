@@ -6,7 +6,7 @@ pipeline {
                 sh 'cd /home/ana/'
                 sh 'mkdir -p /home/ana/myprojects'
                 sh 'rm -rf myprojects/*'
-                sh 'cd myprojects'
+                sh 'cd /home/ana/myprojects'
               
 
                 sh 'git clone https://github.com/ZOUANI/walo.git'
